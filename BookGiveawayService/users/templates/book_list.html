@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+
+    <!-- Start of the filtering form -->
+    <form method="get" action="{% url 'book_list' %}">
+        Author: <input type="text" name="author">
+        Genre: <input type="text" name="genre">
+        <!-- You can add more fields as needed in the future -->
+        <input type="submit" value="Filter">
+    </form>
+    <!-- End of the filtering form -->
+
+    <ul>
+      {% for book in books %}
+        <li>{{ book.title }}</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
