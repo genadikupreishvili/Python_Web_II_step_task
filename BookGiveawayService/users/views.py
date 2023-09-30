@@ -5,8 +5,6 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BookForm
-from .models import Book
-from .models import Author
 from django.core.mail import send_mail
 
 from rest_framework import viewsets
@@ -23,11 +21,6 @@ class BookViewSet(viewsets.ModelViewSet):
 
 class MyLoginView(LoginView):
     template_name = 'login.html'
-    # Add any other customization here
-
-
-
-
 
 
 
